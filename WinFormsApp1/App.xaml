@@ -1,0 +1,41 @@
+﻿<Application
+ x:Class="WinFormsApp1.App"
+ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Application.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="ms-appx:///Mile.Xaml.Styles.SunValley.xbf" />
+                <ResourceDictionary Source="ms-appx:///MinimalExpanderStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+
+            <Style TargetType="Grid" x:Key="ConfigurationBlockStyle">
+                <Setter Target="Background" Value="{ThemeResource CardBackgroundFillColorDefaultBrush}"/>
+                <Setter Target="BorderBrush" Value="{ThemeResource CardStrokeColorDefaultBrush}"/>
+                <Setter Target="BorderThickness" Value="1"/>
+                <Setter Target="CornerRadius" Value="{StaticResource ControlCornerRadius}"/>
+                <Setter Target="Padding" Value="16"/>
+                <Setter Target="Margin" Value="0,0,0,4"/>
+                <Setter Target="MinHeight" Value="72"/>
+            </Style>
+
+            <Style TargetType="TextBox" x:Key="ConfigurationBlockTextBoxStyle" BasedOn="{StaticResource DefaultTextBoxStyle}">
+                <Setter Target="VerticalAlignment" Value="Center"/>
+                <Setter Target="Height" Value="32"/>
+            </Style>
+
+            <Style TargetType="ComboBox" x:Key="ConfigurationBlockComboBoxStyle" BasedOn="{StaticResource DefaultComboBoxStyle}">
+                <Setter Target="VerticalAlignment" Value="Center"/>
+                <Setter Target="Height" Value="32"/>
+            </Style>
+
+
+            <Style TargetType="ToggleSwitch" x:Key="ConfigurationBlockToggleSwitchStyle" BasedOn="{StaticResource DefaultToggleSwitchStyle}">
+                <Setter Target="VerticalAlignment" Value="Center"/>
+                <Setter Target="Height" Value="32"/>
+            </Style>
+
+        </ResourceDictionary>
+	</Application.Resources>
+</Application>

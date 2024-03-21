@@ -1,0 +1,31 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	x:Class="WinFormsApp1.ViewSettingPage"
+    xmlns:local="using:WinFormsApp1"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Margin="24, 24, 24, 0">
+
+
+    <StackPanel Orientation="Vertical">
+        <local:MinimalExpander Header="列表显示"  HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" IsExpanded="True">
+            <StackPanel Orientation="Vertical">
+                <CheckBox>显示 “..” 项（双击向上）</CheckBox>
+                <CheckBox>显示真实图标</CheckBox>
+                <CheckBox>整行选择</CheckBox>
+                <CheckBox>显示网格线</CheckBox>
+                <CheckBox>单击打开项目</CheckBox>
+                <CheckBox>7-Zip 传统选择模式</CheckBox>
+                <CheckBox>右键菜单显示系统菜单</CheckBox>
+            </StackPanel>
+        </local:MinimalExpander>
+
+        <Grid Style="{StaticResource ConfigurationBlockStyle}"  Margin="0, 4, 0, 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" VerticalAlignment="Center">使用大内存页</TextBlock>
+            <ToggleSwitch Grid.Column="1" HorizontalAlignment="Right" MinWidth="0"/>
+        </Grid>
+    </StackPanel>
+</Page>

@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net48</TargetFramework>	  
+    <UseWindowsForms>true</UseWindowsForms>
+    <LangVersion>10.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <TargetPlatformVersion>10.0.22621.0</TargetPlatformVersion>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <Platforms>AnyCPU;ARM64</Platforms>
+    <MileXamlEnableIntelliSenseForDotNet>false</MileXamlEnableIntelliSenseForDotNet>
+  </PropertyGroup>
+
+    <ItemGroup>
+
+
+	</ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Mile.Xaml" Version="2.1.661" />
+  </ItemGroup>
+
+</Project>

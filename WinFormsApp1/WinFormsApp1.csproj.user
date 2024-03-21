@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="ViewSettingPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="FolderSettingPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EditorSettingPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="IntegrationSettingPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="SettingWindowControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

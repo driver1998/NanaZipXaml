@@ -1,0 +1,37 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    x:Class="WinFormsApp1.FolderSettingPage"
+    xmlns:local="using:WinFormsApp1"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Margin="24, 24, 24, 0">
+
+
+    <StackPanel Orientation="Vertical">
+        <local:MinimalExpander Header="工作文件夹" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" IsExpanded="True">
+            <StackPanel HorizontalAlignment="Stretch" Orientation="Vertical">
+                <RadioButton>系统临时文件夹</RadioButton>
+                <RadioButton>当前文件夹</RadioButton>
+                <RadioButton>指定位置</RadioButton>
+
+                <Grid Margin="0, 8, 0, 0" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="8"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox Grid.Column="0" HorizontalAlignment="Stretch" Width="Auto"></TextBox>
+                    <Button Grid.Column="2">浏览</Button>
+                </Grid>
+            </StackPanel>
+        </local:MinimalExpander>
+
+        <Grid Style="{StaticResource ConfigurationBlockStyle}" Margin="0, 4, 0, 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" VerticalAlignment="Center">仅为可移动设备使用工作文件夹</TextBlock>
+            <ToggleSwitch Grid.Column="1" HorizontalAlignment="Right" MinWidth="0"/>
+        </Grid>
+    </StackPanel>
+</Page>

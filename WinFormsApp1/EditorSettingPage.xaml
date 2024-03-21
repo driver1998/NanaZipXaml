@@ -1,0 +1,44 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	x:Class="WinFormsApp1.EditorSettingPage"
+    xmlns:local="using:WinFormsApp1"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Margin="24, 24, 24, 0">
+
+
+    <StackPanel Orientation="Vertical">
+        <local:MinimalExpander Header="查看器" Margin="0, 4, 0, 0"  HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" IsExpanded="True">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="8"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBox Grid.Column="0" HorizontalAlignment="Stretch" Width="Auto"></TextBox>
+                <Button Grid.Column="2">浏览</Button>
+            </Grid>
+        </local:MinimalExpander>
+        <local:MinimalExpander Header="编辑器" Margin="0, 4, 0, 0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" IsExpanded="True">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="8"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBox Grid.Column="0" HorizontalAlignment="Stretch" Width="Auto"></TextBox>
+                <Button Grid.Column="2">浏览</Button>
+            </Grid>
+        </local:MinimalExpander>
+        <local:MinimalExpander Header="文件比较程序" Margin="0, 4, 0, 0"  HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" IsExpanded="True">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="8"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBox Grid.Column="0" HorizontalAlignment="Stretch" Width="Auto"></TextBox>
+                <Button Grid.Column="2">浏览</Button>
+            </Grid>
+        </local:MinimalExpander>
+    </StackPanel>
+</Page>

@@ -1,0 +1,17 @@
+﻿<UserControl
+	x:Class="WinFormsApp1.SettingWindowControl"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+
+    <NavigationView x:Name="NaviView" PaneDisplayMode="Top" IsBackButtonVisible="Collapsed" IsSettingsVisible="False" ItemInvoked="NaviView_ItemInvoked">
+        <NavigationView.MenuItems>
+            <NavigationViewItem Tag="WinFormsApp1.IntegrationSettingPage">集成</NavigationViewItem>
+            <NavigationViewItem Tag="WinFormsApp1.FolderSettingPage">文件夹</NavigationViewItem>
+            <NavigationViewItem Tag="WinFormsApp1.EditorSettingPage">编辑器</NavigationViewItem>
+            <NavigationViewItem Tag="WinFormsApp1.ViewSettingPage">显示</NavigationViewItem>
+        </NavigationView.MenuItems>
+
+        <Frame x:Name="ContentFrame"/>
+    </NavigationView>
+</UserControl>

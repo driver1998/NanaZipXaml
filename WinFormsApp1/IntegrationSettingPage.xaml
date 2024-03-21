@@ -1,0 +1,80 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	x:Class="WinFormsApp1.IntegrationSettingPage"
+    xmlns:local="using:WinFormsApp1"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Margin="24, 24, 24, 0">
+
+
+    <StackPanel Orientation="Vertical">
+
+        <Grid Style="{StaticResource ConfigurationBlockStyle}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+                <TextBlock VerticalAlignment="Center">文件关联</TextBlock>
+                <TextBlock VerticalAlignment="Center" Style="{ThemeResource CaptionTextBlockStyle}" Foreground="{StaticResource SystemBaseMediumColor}">NanaZip 的文件关联由 Windows 管理</TextBlock>
+            </StackPanel>
+            <Button Grid.Column="1">打开 Windows 设置应用</Button>
+        </Grid>
+
+        <Grid Style="{StaticResource ConfigurationBlockStyle}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" VerticalAlignment="Center">排除重复的根文件夹</TextBlock>
+            <ToggleSwitch Grid.Column="1" HorizontalAlignment="Right" MinWidth="0"/>
+        </Grid>
+
+        <Grid Style="{StaticResource ConfigurationBlockStyle}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+                <TextBlock Grid.Column="0" VerticalAlignment="Center">传播 Zone.Id 数据流</TextBlock>
+                <TextBlock Grid.Column="0" VerticalAlignment="Center" Style="{ThemeResource CaptionTextBlockStyle}" Foreground="{StaticResource SystemBaseMediumColor}">用于标识文件是否来自 Internet</TextBlock>
+            </StackPanel>
+            <ComboBox Grid.Column="1" Style="{StaticResource ConfigurationBlockComboBoxStyle}">
+                <ComboBoxItem>是</ComboBoxItem>
+                <ComboBoxItem>否</ComboBoxItem>
+                <ComboBoxItem>仅 Office 文件</ComboBoxItem>
+            </ComboBox>
+        </Grid>
+
+        <Button x:Name="btnItem" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" MinHeight="72" Padding="16" BorderThickness="1" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" VerticalAlignment="Center">选择在右键菜单中显示的项目</TextBlock>
+                <FontIcon Grid.Column="1" FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE8A7;" FontSize="16" Foreground="{ThemeResource SystemBaseMediumColor}"></FontIcon>
+            </Grid>
+        </Button>
+
+        <ContentDialog Title="右键菜单" x:Name="contextMenuItemDialog" PrimaryButtonText="确定" SecondaryButtonText="取消" PrimaryButtonStyle="{ThemeResource AccentButtonStyle}">
+            <ScrollViewer>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock>请选择在右键菜单中显示的项目。</TextBlock>
+                    <ItemsControl ItemsSource="{x:Bind ContextMenuItems}" Margin="0, 8, 0, 0">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <ItemsStackPanel Orientation="Vertical"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate x:DataType="local:ContextMenuSettingItem">
+                                <CheckBox Content="{x:Bind Name}" IsChecked="{x:Bind Value}"/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
+
+            </ScrollViewer>
+        </ContentDialog>
+    </StackPanel>
+</Page>
