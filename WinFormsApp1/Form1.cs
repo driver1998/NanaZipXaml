@@ -1,57 +1,37 @@
-using Mile.Xaml;
+﻿using Mile.Xaml;
 using System;
-using System.Runtime.InteropServices;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WinFormsApp1
 {
     public partial class Form1 : Form
     {
-        [DllImport("dwmapi.dll", CallingConvention = CallingConvention.StdCall)]
-        private static extern int DwmSetWindowAttribute(IntPtr hwnd, int dwAttrubute, ref int pvAttribute, int cbAttribute);
-
-        [DllImport("dwmapi.dll", CallingConvention = CallingConvention.StdCall)]
-        private static extern int DwmExtendFrameIntoClientArea(IntPtr hwnd, ref MARGINS pMarInset);
-
-        private const int DWMWA_SYSTEMBACKDROP_TYPE = 38;
-
-        private const int DWMSBT_MAINWINDOW = 2;
-
-        [StructLayout(LayoutKind.Sequential)]
-        private struct MARGINS
-        {
-            public int cxLeftWidth;
-            public int cxRightWidth;
-            public int cyTopHeight;
-            public int cyBottomHeight;
-        }
-
-        private WindowsXamlHost xamlHost = new();
         public Form1()
         {
             InitializeComponent();
+            this.Controls.Add(new WindowsXamlHost());
+        }
 
-            this.Controls.Add(xamlHost);
-            xamlHost.Dock = DockStyle.Fill;
-            xamlHost.AutoSize = true;
-            xamlHost.Child = new MainWindowControl();
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new ProgressForm().ShowDialog();
+        }
 
-            this.Text = "";
-            this.ShowIcon = false;
+        private void button2_Click(object sender, EventArgs e)
+        {
+            new SettingForm().ShowDialog();
+        }
 
-            int value = DWMSBT_MAINWINDOW;
-            DwmSetWindowAttribute(this.Handle, DWMWA_SYSTEMBACKDROP_TYPE, ref value, Marshal.SizeOf(value));
-
-
-            var margins = new MARGINS()
-            {
-                cxLeftWidth = -1,
-                cxRightWidth = -1,
-                cyTopHeight = -1,
-                cyBottomHeight = -1,
-            };
-            DwmExtendFrameIntoClientArea(this.Handle, ref margins);
-
+        private void button3_Click(object sender, EventArgs e)
+        {
+            new DetailViewForm().ShowDialog();
         }
     }
 }

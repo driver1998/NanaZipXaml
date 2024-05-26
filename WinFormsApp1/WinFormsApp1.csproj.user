@@ -4,8 +4,14 @@
     <Compile Update="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="ProgressForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="DetailViewWindowControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="ViewSettingPage.xaml">
       <SubType>Designer</SubType>
     </Page>

@@ -17,7 +17,15 @@
 
 	</ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Mile.Xaml" Version="2.1.661" />
+    <PackageReference Include="Mile.Xaml" Version="2.2.944" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="DetailViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="SettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 
 </Project>
