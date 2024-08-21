@@ -17,7 +17,7 @@ namespace WinFormsApp1
             var firstItem = NaviView.MenuItems[0] as NavigationViewItemBase;
             NaviView.SelectedItem = firstItem;
 
-            Type navPageType = Type.GetType(firstItem?.Tag.ToString());
+            Type? navPageType = Type.GetType(firstItem?.Tag.ToString() ?? "");
             ContentFrame.Navigate(navPageType, null, null);
         }
 
@@ -25,11 +25,11 @@ namespace WinFormsApp1
         {
             if (args.InvokedItemContainer != null)
             {
-                Type navPageType = Type.GetType(args.InvokedItemContainer.Tag.ToString());
+                Type? navPageType = Type.GetType(args.InvokedItemContainer.Tag.ToString() ?? "");
                 NavView_Navigate(navPageType, args.RecommendedNavigationTransitionInfo);
             }
         }
-        private void NavView_Navigate(Type navPageType,NavigationTransitionInfo transitionInfo)
+        private void NavView_Navigate(Type? navPageType,NavigationTransitionInfo transitionInfo)
         {            
             Type preNavPageType = ContentFrame.CurrentSourcePageType;
             if (navPageType is not null && !Type.Equals(preNavPageType, navPageType))

@@ -22,7 +22,7 @@ namespace WinFormsApp1
                 XamlManager = WindowsXamlManager.InitializeForCurrentThread();
             }
 
-            Window.Current.GetInterop().TransparentBackground = true;
+            Window.Current.GetInterop().SetTransparentBackground(true);
             this.InitializeComponent();
         }
 
